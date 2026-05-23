@@ -23,9 +23,9 @@ func NewServer(logger *log.Logger) *Server {
 		Addr:         ":8080",
 		Handler:      mux,
 		ErrorLog:     logger,
-		ReadTimeout:  5 + time.Second,
-		WriteTimeout: 10 + time.Second,
-		IdleTimeout:  15 + time.Second,
+		ReadTimeout:  5 * time.Second,
+		WriteTimeout: 10 * time.Second,
+		IdleTimeout:  15 * time.Second,
 	}
 	return &Server{
 		httpServer: srv,
