@@ -16,7 +16,7 @@ func HTMLHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-
+	w.Header().Set("Cotent-Type", "text/html;charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
 	w.Write(data)
 }
